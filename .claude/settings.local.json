@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mysql -u root les_bonnes_pieces -e \"DELETE FROM products WHERE product_id > 10;\")",
+      "Bash(/c/xampp/mysql/bin/mysql -u root les_bonnes_pieces -e \"DELETE FROM products WHERE product_id > 10; ALTER TABLE products DROP COLUMN image;\")",
+      "Bash(/c/xampp/mysql/bin/mysql -u root les_bonnes_pieces -e \"SELECT product_id, name FROM products;\")"
+    ]
+  }
+}
