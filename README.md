@@ -23,14 +23,8 @@ Projet BTS SIO SLAM — application web de vente de pièces automobiles.
 
 ```
 les-bonnes-pieces/
-├── index.html
+├── index.php
 ├── style.css
-├── test.js
-├── avis.js
 ├── config/
 │   └── database.php    (connexion PDO)
-└── api/
-    ├── get_pieces.php   (GET tous les produits)
-    ├── get_avis.php     (GET avis d'une pièce)
-    └── post_avis.php    (POST nouvel avis)
 ```
