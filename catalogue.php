@@ -50,10 +50,10 @@ $produits = $stmt->fetchAll();
                 <div class="card h-100">
                     <img src="<?php echo $produit['image']; ?>" class="card-img-top" style="height: 200px; object-fit: contain; padding: 15px;">
                     <div class="card-body">
-                        <h5 class="card-title"><?php echo $produit['name']; ?></h5>
-                        <p class="card-text"><?php echo $produit['description']; ?></p>
+                        <h5 class="card-title"><?php echo htmlspecialchars($produit['name']); ?></h5>
+                        <p class="card-text"><?php echo htmlspecialchars($produit['description']); ?></p>
                         <p><strong><?php echo number_format($produit['price'], 2); ?> €</strong></p>
-                        <p>Catégorie : <?php echo $produit['category']; ?></p>
+                        <p>Catégorie : <?php echo htmlspecialchars($produit['category']); ?></p>
                         <p><?php echo $produit['disponibilite'] ? 'En stock' : 'Rupture de stock'; ?></p>
                     </div>
                     <div class="card-footer">

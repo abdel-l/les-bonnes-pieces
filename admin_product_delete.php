@@ -13,7 +13,7 @@ if (!$user || $user['role'] != 'admin') {
     redirectToUrl('index.php');
 }
 
-$productId = $_GET['id'] ?? 0;
+$productId = (int)($_POST['product_id'] ?? 0);
 
 if ($productId > 0) {
     // supprime le produit

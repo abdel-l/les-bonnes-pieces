@@ -54,13 +54,16 @@ $data = $stmt->fetchAll();
         <?php foreach ($data as $product): ?>
             <tr>
                 <td><?php echo $product['product_id']; ?></td>
-                <td><?php echo $product['name']; ?></td>
-                <td><?php echo $product['price']; ?> €</td>
-                <td><?php echo $product['category']; ?></td>
+                <td><?php echo htmlspecialchars($product['name']); ?></td>
+                <td><?php echo number_format($product['price'], 2); ?> €</td>
+                <td><?php echo htmlspecialchars($product['category']); ?></td>
                 <td><?php echo $product['disponibilite'] ? 'Oui' : 'Non'; ?></td>
                 <td>
                     <a href="admin_product_edit.php?id=<?php echo $product['product_id']; ?>" class="btn btn-sm btn-primary">Modifier</a>
-                    <a href="admin_product_delete.php?id=<?php echo $product['product_id']; ?>" class="btn btn-sm btn-danger">Supprimer</a>
+                    <form method="POST" action="admin_product_delete.php" style="display:inline;" onsubmit="return confirm('Supprimer ce produit ?')">
+                        <input type="hidden" name="product_id" value="<?php echo $product['product_id']; ?>">
+                        <button type="submit" class="btn btn-sm btn-danger">Supprimer</button>
+                    </form>
                 </td>
             </tr>
         <?php endforeach; ?>

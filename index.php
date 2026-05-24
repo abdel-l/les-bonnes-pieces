@@ -62,8 +62,8 @@ $produitsAccueil = $stmt->fetchAll();
                     <div class="card h-100 shadow-sm hover-card">
                         <img src="<?php echo $produit['image']; ?>" class="card-img-top" style="height: 250px; object-fit: contain; padding: 30px; background: #f8f9fa;">
                         <div class="card-body text-center">
-                            <h5 class="card-title"><?php echo $produit['name']; ?></h5>
-                            <p class="text-muted"><?php echo $produit['category']; ?></p>
+                            <h5 class="card-title"><?php echo htmlspecialchars($produit['name']); ?></h5>
+                            <p class="text-muted"><?php echo htmlspecialchars($produit['category']); ?></p>
                             <p class="h3 text-primary"><?php echo number_format($produit['price'], 2); ?> €</p>
                             <p class="text-success"><?php echo $produit['disponibilite'] ? 'En stock' : 'Rupture de stock'; ?></p>
                         </div>

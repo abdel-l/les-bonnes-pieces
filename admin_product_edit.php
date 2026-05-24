@@ -58,27 +58,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <form method="POST">
         <div class="mb-3">
             <label>Nom du produit</label>
-            <input type="text" class="form-control" name="name" value="<?php echo $product['name']; ?>" required>
+            <input type="text" class="form-control" name="name" value="<?php echo htmlspecialchars($product['name']); ?>" required>
         </div>
 
         <div class="mb-3">
             <label>Description</label>
-            <textarea class="form-control" name="description"><?php echo $product['description']; ?></textarea>
+            <textarea class="form-control" name="description"><?php echo htmlspecialchars($product['description']); ?></textarea>
         </div>
 
         <div class="mb-3">
             <label>Prix</label>
-            <input type="number" step="0.01" class="form-control" name="price" value="<?php echo $product['price']; ?>" required>
+            <input type="number" step="0.01" class="form-control" name="price" value="<?php echo htmlspecialchars($product['price']); ?>" required>
         </div>
 
         <div class="mb-3">
             <label>Catégorie</label>
-            <input type="text" class="form-control" name="category" value="<?php echo $product['category']; ?>" required>
+            <input type="text" class="form-control" name="category" value="<?php echo htmlspecialchars($product['category']); ?>" required>
         </div>
 
         <div class="mb-3">
             <label>Image (chemin)</label>
-            <input type="text" class="form-control" name="image" value="<?php echo $product['image']; ?>" required>
+            <input type="text" class="form-control" name="image" value="<?php echo htmlspecialchars($product['image']); ?>" required>
         </div>
 
         <div class="mb-3">

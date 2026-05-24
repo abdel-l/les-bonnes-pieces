@@ -1,7 +1,5 @@
 <?php
-// TODO: ajouter validation quantité max
 session_start();
-require_once(__DIR__ . '/navbar.php');
 require_once(__DIR__ . '/config/database.php');
 
 // récup les produits du panier
@@ -46,6 +44,8 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
 </head>
 <body>
 
+<?php require_once(__DIR__ . '/navbar.php'); ?>
+
 <div class="container my-5">
     <h1 class="mb-4">Mon Panier</h1>
 
@@ -74,8 +74,8 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
                 <?php foreach ($items as $item): ?>
                     <tr>
                         <td>
-                            <img src="<?php echo $item['image']; ?>" style="width: 50px; height: 50px; object-fit: contain;">
-                            <?php echo $item['name']; ?>
+                            <img src="<?php echo htmlspecialchars($item['image']); ?>" style="width: 50px; height: 50px; object-fit: contain;">
+                            <?php echo htmlspecialchars($item['name']); ?>
                         </td>
                         <td><?php echo number_format($item['price'], 2); ?> €</td>
                         <td>
